@@ -1,0 +1,50 @@
+/*h1 {*/
+/*    background-color: yellow;*/
+/*    color: red;*/
+/*}*/
+
+/* solution to an issues found on https://stackoverflow.com/questions/41768692/font-awesome-not-showing-icons-only-squares-with-react-and-webpack/49665958 */
+.fa, .far, .fas {
+    font-family: FontAwesome !important; }
+
+input {
+    margin-bottom: 15px;
+}
+
+.wbdv-nudge-15px-down {
+    position: relative;
+    top: 15px;
+}
+
+.wbdv-nudge-3px-up {
+    position: relative;
+    bottom: 3px;
+}
+
+.wbdv-color-red {
+    color: red;
+}
+
+.wbdv-add-course-btn {
+    position: relative;
+    top: 15px;
+    color: red;
+}
+
+.wbdv-stuck-bottom-right {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+}
+
+.wbdv-padding-top {
+    padding-top: 30px;
+}
+
+.wbdv-sticky-header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: lightblue;
+    right: 0px;
+}

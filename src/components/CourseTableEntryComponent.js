@@ -1,7 +1,7 @@
 import React from "react";
 import {updateCourse} from "../services/CourseService";
 
-class CourseRowComponent extends React.Component {
+class CourseTableEntryComponent extends React.Component {
   state = {
     editing: false,
     courseTitle: "Some Course",
@@ -22,7 +22,6 @@ class CourseRowComponent extends React.Component {
   }
 
   updateCourse = () => {
-    debugger
     this.setState({editing: false})
     updateCourse(this.state.course._id, this.state.course)
   }
@@ -66,4 +65,4 @@ class CourseRowComponent extends React.Component {
   }
 }
 
-export default CourseRowComponent
+export default CourseTableEntryComponent

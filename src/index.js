@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css"
+import "font-awesome/css/font-awesome.css"
 import App from './App';
 import Hello from "./Hello";
 import * as serviceWorker from './serviceWorker';
-import CourseListComponent from "./components/CourseListComponent";
+import CourseManagerComponent from "./components/CourseManagerComponent";
 import SimpleCalculator from "./components/SimpleCalculator";
 
 ReactDOM.render(
-  <CourseListComponent/>
+  <CourseManagerComponent/>
   ,
   document.getElementById('root')
 );
