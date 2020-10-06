@@ -1,14 +1,4 @@
-const url = "https://wbdv-generic-server.herokuapp.com/api/jannunzi/courses"
-
-export const findAllCourses = () =>
-  fetch(url)
-    .then(response => response.json())
-
-export const deleteCourse = (courseId) =>
-  fetch(`${url}/${courseId}`, {
-    method: 'DELETE'
-  })
-    .then(response => response.json())
+const url = "https://wbdv-generic-server.herokuapp.com/api/hjacobson/courses"
 
 export const createCourse = (course) =>
   fetch(url, {
@@ -18,6 +8,14 @@ export const createCourse = (course) =>
       'content-type': 'application/json'
     }
   })
+    .then(response => response.json())
+
+export const findAllCourses = () =>
+  fetch(url)
+    .then(response => response.json())
+
+export const findCourseById = (id) =>
+  fetch(`${url}/${id}`)
     .then(response => response.json())
 
 export const updateCourse = (courseId, newCourse) =>
@@ -30,6 +28,12 @@ export const updateCourse = (courseId, newCourse) =>
   })
     .then(response => response.json())
 
+export const deleteCourse = (courseId) =>
+  fetch(`${url}/${courseId}`, {
+    method: 'DELETE'
+  })
+    .then(response => response.json())
+
 export default {
-  findAllCourses, deleteCourse, createCourse
+  createCourse, findAllCourses, findCourseById, updateCourse, deleteCourse
 }
