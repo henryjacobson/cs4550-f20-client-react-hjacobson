@@ -2,6 +2,8 @@ import React from "react";
 import $ from 'jquery'
 import "../../css/styles.css"
 import LessonComponent from "./LessonComponent";
+import ModuleComponent from "./ModuleComponent";
+import TopicComponent from "./TopicComponent";
 
 class CourseEditorComponent extends React.Component {
     state = {
@@ -36,7 +38,7 @@ class CourseEditorComponent extends React.Component {
                 <div className="row">
                     <div className="col-4">
                         <h1>
-                            <i className="fas fa-times wbdv-source-editor wbdv-close"/>
+                            <i className="fa fa-times wbdv-source-editor wbdv-close"/>
                             <span className="wbdv-course-title">Knitting</span>
                         </h1>
                     </div>
@@ -50,7 +52,7 @@ class CourseEditorComponent extends React.Component {
                                 )
                             }
                         </ul>
-                        <i className="fas fa-plus col-xs-6 wbdv-lesson-add-btn"/>
+                        <i className="fa fa-plus col-xs-6 wbdv-lesson-add-btn"/>
                     </div>
                 </div>
 
@@ -60,20 +62,12 @@ class CourseEditorComponent extends React.Component {
                         <div className="container">
                             <div className="row">
                                 <ul className="list-group wbdv-module-list">
-                                    <li className="list-group-item wbdv-module-item-title">Module 1 <i
-                                        className="fas fa-times float-right wbdv-module-item-delete-btn"/></li>
-                                    <li className="list-group-item wbdv-module-item-title">Module 2 <i
-                                        className="fas fa-times float-right wbdv-module-item-delete-btn"/></li>
-                                    <li className="list-group-item wbdv-module-item-title active">Module 3 <i
-                                        className="fas fa-times float-right wbdv-module-item-delete-btn"/></li>
-                                    <li className="list-group-item wbdv-module-item-title">Module 4 <i
-                                        className="fas fa-times float-right wbdv-module-item-delete-btn"/></li>
-                                    <li className="list-group-item wbdv-module-item-title">Module 5 <i
-                                        className="fas fa-times float-right wbdv-module-item-delete-btn"/></li>
-                                    <li className="list-group-item wbdv-module-item-title">Module 6 <i
-                                        className="fas fa-times float-right wbdv-module-item-delete-btn"/></li>
-                                    <li className="list-group-item wbdv-module-item-title wbdv-module-item-add-btn">+<i
-                                        className="fas fa-plus col-xs-6 float-right wbdv-module-item-delete-btn"/></li>
+                                    {
+                                        this.state.modules.map(module =>
+                                            <ModuleComponent
+                                                module={module}/>
+                                        )
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -83,24 +77,11 @@ class CourseEditorComponent extends React.Component {
                         <div className="container">
                             <div className="row">
                                 <ul className="nav nav-pills wbdv-topic-pill-list">
-                                    <li className="nav-item">
-                                        <a href="#" className="nav-link wbdv-topic-pill">Topic 1</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a href="#" className="nav-link wbdv-topic-pill active">Topic 2</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a href="#" className="nav-link wbdv-topic-pill">Topic 3</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a href="#" className="nav-link wbdv-topic-pill">Topic 4</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a href="#" className="nav-link wbdv-topic-pill">Topic 5</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a href="#" className="nav-link wbdv-topic-pill">Topic 6</a>
-                                    </li>
+                                    {
+                                        this.state.topics.map(topic =>
+                                            <TopicComponent
+                                                topic={topic}/>)
+                                    }
                                 </ul>
                             </div>
 
@@ -128,10 +109,10 @@ class CourseEditorComponent extends React.Component {
                                             Heading Widget
                                             <span className="float-right">
                         <a className="btn btn-warning wbdv-nudge-3px-up">
-                            <i className="fas fa-arrow-up"/>
+                            <i className="fa fa-arrow-up"/>
                         </a>
                         <a className="btn btn-warning wbdv-nudge-3px-up">
-                            <i className="fas fa-arrow-down"/>
+                            <i className="fa fa-arrow-down"/>
                         </a>
                         <select>
                             <option>Heading</option>
@@ -170,7 +151,7 @@ class CourseEditorComponent extends React.Component {
                             </div>
 
                             <div className="row">
-                                <i className="fas fa-plus col-xs-6 float-right"/>
+                                <i className="fa fa-plus col-xs-6 float-right"/>
                             </div>
                         </div>
 
