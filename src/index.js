@@ -6,12 +6,12 @@ import "font-awesome/css/font-awesome.css"
 import App from './App';
 import Hello from "./Hello";
 import * as serviceWorker from './serviceWorker';
-import CourseManagerComponent from "./components/CourseManager/CourseManagerComponent";
-import CourseEditorComponent from "./components/CourseEditor/CourseEditorComponent"
+import CourseManagerContainer from "./containers/CourseManagerContainer";
+import CourseEditorContainer from "./containers/CourseEditorContainer"
 import SimpleCalculator from "./components/SimpleCalculator";
 
 ReactDOM.render(
-  <CourseEditorComponent/>
+  <CourseEditorContainer/>
   ,
   document.getElementById('root')
 );

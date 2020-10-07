@@ -1,13 +1,13 @@
 import React from "react";
 import $ from 'jquery'
-import CourseTableEntryComponent from "./CourseTableEntryComponent";
-import courseService from "../../services/CourseService";
-import "../../css/styles.css"
-import "../../css/course-manager.style.client.css"
-import CourseTableComponent from "./CourseTableComponent";
-import CourseGridComponent from "./CourseGridComponent";
+import CourseTableEntryComponent from "../components/CourseManager/CourseTableEntryComponent";
+import courseService from "../services/CourseService";
+import "../css/styles.css"
+import "../css/course-manager.style.client.css"
+import CourseTableComponent from "../components/CourseManager/CourseTableComponent";
+import CourseGridComponent from "../components/CourseManager/CourseGridComponent";
 
-class CourseManagerComponent extends React.Component {
+class CourseManagerContainer extends React.Component {
     state = {
         courses: [],
         table: true
@@ -118,4 +118,4 @@ class CourseManagerComponent extends React.Component {
     }
 }
 
-export default CourseManagerComponent
+export default CourseManagerContainer

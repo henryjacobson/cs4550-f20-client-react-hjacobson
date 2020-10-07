@@ -1,11 +1,11 @@
 import React from "react";
 import $ from 'jquery'
-import "../../css/styles.css"
-import LessonComponent from "./LessonComponent";
-import ModuleComponent from "./ModuleComponent";
-import TopicComponent from "./TopicComponent";
+import "../css/styles.css"
+import LessonComponent from "../components/CourseEditor/LessonComponent";
+import ModuleComponent from "../components/CourseEditor/ModuleComponent";
+import TopicComponent from "../components/CourseEditor/TopicComponent";
 
-class CourseEditorComponent extends React.Component {
+class CourseEditorContainer extends React.Component {
     state = {
         modules: [
             "Module 1 - jQuery",
@@ -166,4 +166,4 @@ class CourseEditorComponent extends React.Component {
     }
 }
 
-export default CourseEditorComponent
+export default CourseEditorContainer
