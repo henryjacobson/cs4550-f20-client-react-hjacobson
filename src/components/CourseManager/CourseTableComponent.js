@@ -1,5 +1,4 @@
 import React from "react";
-import {updateCourse} from "../../services/CourseService";
 import CourseTableEntryComponent from "./CourseTableEntryComponent";
 
 class CourseTableComponent extends React.Component {

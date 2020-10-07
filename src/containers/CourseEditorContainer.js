@@ -1,5 +1,4 @@
 import React from "react";
-import $ from 'jquery'
 import "../css/styles.css"
 import LessonComponent from "../components/CourseEditor/LessonComponent";
 import ModuleComponent from "../components/CourseEditor/ModuleComponent";
@@ -49,7 +48,8 @@ class CourseEditorContainer extends React.Component {
                             {
                                 this.state.lessons.map(lesson =>
                                     <LessonComponent
-                                        lesson={lesson}/>
+                                        lesson={lesson}
+                                        key={lesson}/>
                                 )
                             }
                         </ul>
@@ -66,7 +66,8 @@ class CourseEditorContainer extends React.Component {
                                     {
                                         this.state.modules.map(module =>
                                             <ModuleComponent
-                                                module={module}/>
+                                                module={module}
+                                                key={module}/>
                                         )
                                     }
                                 </ul>
@@ -81,7 +82,8 @@ class CourseEditorContainer extends React.Component {
                                     {
                                         this.state.topics.map(topic =>
                                             <TopicComponent
-                                                topic={topic}/>)
+                                                topic={topic}
+                                                key={topic}/>)
                                     }
                                 </ul>
                             </div>

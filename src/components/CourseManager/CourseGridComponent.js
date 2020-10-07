@@ -1,5 +1,4 @@
 import React from "react";
-import {updateCourse} from "../../services/CourseService";
 import CourseGridEntryComponent from "./CourseGridEntryComponent";
 
 class CourseGridComponent extends React.Component {
