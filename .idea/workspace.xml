@@ -20,11 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b3a6f4d-548d-4df4-8ea0-f4b048e41237" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/CourseGridComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CourseGridEntryComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/LessonComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/course-editor.style.client.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseManagerComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseManagerComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseTableEntryComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseTableEntryComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +85,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mrsco\Documents\WebDev\cs4550-f20-client-react-hjacobson\src\css" />
+      <recent name="C:\Users\mrsco\Documents\WebDev\cs4550-f20-client-react-hjacobson\src\components\CourseManager" />
     </key>
   </component>
   <component name="RunManager">
@@ -111,7 +112,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602010523404</updated>
-      <workItem from="1602018484630" duration="12136000" />
+      <workItem from="1602018484630" duration="14572000" />
     </task>
     <servers />
   </component>
@@ -130,18 +131,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="683" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602025529522">
+    <state x="683" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602032637475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="683" y="322" key="#com.intellij.fileTypes.FileTypeChooser/-3000.0.1500.980/0.0.1920.1040@0.0.1920.1040" timestamp="1602025529522" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602025903373">
+    <state x="683" y="322" key="#com.intellij.fileTypes.FileTypeChooser/-3000.0.1500.980/0.0.1920.1040@0.0.1920.1040" timestamp="1602032637475" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602033511716">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-3000.0.1500.980/0.0.1920.1040@0.0.1920.1040" timestamp="1602025903373" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-3000.0.1500.980/0.0.1920.1040@0.0.1920.1040" timestamp="1602033511716" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1602026228690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/-3000.0.1500.980/0.0.1920.1040@0.0.1920.1040" timestamp="1602026228690" />
+    <state x="223" y="203" width="1547" height="717" key="dock-window-1" timestamp="1602032983092">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="223" y="203" width="1547" height="717" key="dock-window-1/-3000.0.1500.980/0.0.1920.1040@0.0.1920.1040" timestamp="1602032983092" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602028129102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

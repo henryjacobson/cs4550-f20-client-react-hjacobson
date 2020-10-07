@@ -7,10 +7,11 @@ import App from './App';
 import Hello from "./Hello";
 import * as serviceWorker from './serviceWorker';
 import CourseManagerComponent from "./components/CourseManager/CourseManagerComponent";
+import CourseEditorComponent from "./components/CourseEditor/CourseEditorComponent"
 import SimpleCalculator from "./components/SimpleCalculator";
 
 ReactDOM.render(
-  <CourseManagerComponent/>
+  <CourseEditorComponent/>
   ,
   document.getElementById('root')
 );
