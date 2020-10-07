@@ -42,7 +42,8 @@ class CourseGridEntryComponent extends React.Component {
                                 <div className={"col-2"}>
                                     <i className="fa fa-file text-center align-middle wbdv-icon"/>
                                 </div>
-                                <label className={"text-truncate col-10 align-middle"}>{this.state.course.title}</label>
+                                <label className={"text-truncate col-10 align-middle"}
+                                onClick={() => this.props.changePage()}>{this.state.course.title}</label>
                             </div>
                         }
                         <div className={"row wbdv-modified-date"}>

@@ -28,7 +28,8 @@ class CourseGridComponent extends React.Component {
                         <CourseGridEntryComponent
                             key={course._id}
                             deleteCourse={this.props.deleteCourse}
-                            course={course}/>
+                            course={course}
+                            changePage={this.props.changePage}/>
                     )
                 }
                 </div>

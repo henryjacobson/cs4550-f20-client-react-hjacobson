@@ -41,7 +41,7 @@ class CourseTableEntryComponent extends React.Component {
             <span>
               <i className="fa fa-file col-xs-6 wbdv-row wbdv-icon"/>
               &nbsp;
-              <label>{this.state.course.title}</label>
+              <label onClick={() => this.props.changePage()}>{this.state.course.title}</label>
             </span>
           }
         </td>

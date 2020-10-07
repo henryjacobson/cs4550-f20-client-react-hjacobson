@@ -38,7 +38,8 @@ class CourseEditorContainer extends React.Component {
                 <div className="row">
                     <div className="col-4">
                         <h1>
-                            <i className="fa fa-times wbdv-source-editor wbdv-close"/>
+                            <i className="fa fa-times wbdv-source-editor wbdv-close"
+                               onClick={() => this.props.changePage()}/>
                             <span className="wbdv-course-title">Knitting</span>
                         </h1>
                     </div>

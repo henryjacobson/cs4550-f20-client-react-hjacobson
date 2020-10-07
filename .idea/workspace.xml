@@ -20,8 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b3a6f4d-548d-4df4-8ea0-f4b048e41237" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseEditorContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseManager/CourseManagerComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/PageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseManager/CourseGridComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseManager/CourseGridComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseManager/CourseGridEntryComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseManager/CourseGridEntryComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseManager/CourseTableComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseManager/CourseTableComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseManager/CourseTableEntryComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseManager/CourseTableEntryComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/CourseEditorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseEditorContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602010523404</updated>
-      <workItem from="1602018484630" duration="15466000" />
+      <workItem from="1602018484630" duration="16495000" />
     </task>
     <servers />
   </component>
@@ -130,10 +136,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="683" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602032637475">
+    <state x="683" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602035317752">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="683" y="322" key="#com.intellij.fileTypes.FileTypeChooser/-3000.0.1500.980/0.0.1920.1040@0.0.1920.1040" timestamp="1602032637475" />
+    <state x="683" y="322" key="#com.intellij.fileTypes.FileTypeChooser/-3000.0.1500.980/0.0.1920.1040@0.0.1920.1040" timestamp="1602035317752" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602033511716">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

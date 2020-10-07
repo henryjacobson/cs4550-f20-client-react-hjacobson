@@ -1,17 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import "font-awesome/css/font-awesome.css"
-import App from './App';
-import Hello from "./Hello";
 import * as serviceWorker from './serviceWorker';
-import CourseManagerContainer from "./containers/CourseManagerContainer";
-import CourseEditorContainer from "./containers/CourseEditorContainer"
-import SimpleCalculator from "./components/SimpleCalculator";
+import PageContainer from "./containers/PageContainer";
 
 ReactDOM.render(
-  <CourseEditorContainer/>
+  <PageContainer/>
   ,
   document.getElementById('root')
 );
