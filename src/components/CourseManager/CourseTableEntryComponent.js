@@ -1,5 +1,5 @@
 import React from "react";
-import {updateCourse} from "../services/CourseService";
+import {updateCourse} from "../../services/CourseService";
 
 class CourseTableEntryComponent extends React.Component {
   state = {
@@ -38,27 +38,32 @@ class CourseTableEntryComponent extends React.Component {
           }
           {
             this.state.editing === false &&
-            <label>{this.state.course.title}</label>
+            <span>
+              <i className="fa fa-file col-xs-6 wbdv-row wbdv-icon"/>
+              &nbsp;
+              <label>{this.state.course.title}</label>
+            </span>
           }
         </td>
-        <td>{this.props.course.owner}</td>
-        <td>{this.props.course.lastUpdated}</td>
-        <td>
-          <button onClick={() => this.props.deleteCourse(this.props.course)}>
-            Delete
-          </button>
+        <td className={"wbdv-row wbdv-owner"}>{this.props.course.owner}</td>
+        <td className={"wbdv-row wbdv-modified-date"}>{this.props.course.lastUpdated}</td>
+        <td className={"wbdv-row"}>
           {
             this.state.editing &&
-            <button onClick={this.updateCourse}>
-              Ok
-            </button>
+            <i
+                className={"fa fa-check wbdv-button wbdv-ok"}
+                onClick={this.updateCourse}/>
           }
           {
             !this.state.editing &&
-            <button onClick={() => this.setState({editing: true})}>
-              Edit
-            </button>
+            <i
+                className={"fa fa-gear wbdv-button wbdv-edit"}
+                onClick={() => this.setState({editing: true})}/>
           }
+          &nbsp;
+          <i
+              className={"wbdv-color-red fa fa-trash wbdv-row wbdv-button wbdv-delete"}
+              onClick={() => this.props.deleteCourse(this.props.course)}/>
         </td>
       </tr>
     );

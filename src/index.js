@@ -6,7 +6,7 @@ import "font-awesome/css/font-awesome.css"
 import App from './App';
 import Hello from "./Hello";
 import * as serviceWorker from './serviceWorker';
-import CourseManagerComponent from "./components/CourseManagerComponent";
+import CourseManagerComponent from "./components/CourseManager/CourseManagerComponent";
 import SimpleCalculator from "./components/SimpleCalculator";
 
 ReactDOM.render(

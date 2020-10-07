@@ -1,10 +1,11 @@
 import React from "react";
 import $ from 'jquery'
 import CourseTableEntryComponent from "./CourseTableEntryComponent";
-import courseService from "../services/CourseService";
-import "../css/styles.css"
-import "../css/course-manager.style.client.css"
+import courseService from "../../services/CourseService";
+import "../../css/styles.css"
+import "../../css/course-manager.style.client.css"
 import CourseTableComponent from "./CourseTableComponent";
+import CourseGridComponent from "./CourseGridComponent";
 
 class CourseManagerComponent extends React.Component {
     state = {
@@ -100,6 +101,13 @@ class CourseManagerComponent extends React.Component {
                     {
                         this.state.table &&
                         <CourseTableComponent
+                            courses={this.state.courses}
+                            deleteCourse={this.deleteCourse}
+                            changeView={this.changeView}/>
+                    }
+                    {
+                        !this.state.table &&
+                        <CourseGridComponent
                             courses={this.state.courses}
                             deleteCourse={this.deleteCourse}
                             changeView={this.changeView}/>
