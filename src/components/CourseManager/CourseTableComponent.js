@@ -26,8 +26,7 @@ class CourseTableComponent extends React.Component {
                         <CourseTableEntryComponent
                             key={course._id}
                             deleteCourse={this.props.deleteCourse}
-                            course={course}
-                            changePage={this.props.changePage}/>
+                            course={course}/>
                     )
                 }
                 </tbody>

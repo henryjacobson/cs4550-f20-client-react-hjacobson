@@ -3,6 +3,7 @@ import "../css/styles.css"
 import LessonComponent from "../components/CourseEditor/LessonComponent";
 import ModuleComponent from "../components/CourseEditor/ModuleComponent";
 import TopicComponent from "../components/CourseEditor/TopicComponent";
+import {Link} from 'react-router-dom';
 
 class CourseEditorContainer extends React.Component {
     state = {
@@ -37,8 +38,8 @@ class CourseEditorContainer extends React.Component {
                 <div className="row">
                     <div className="col-4">
                         <h1>
-                            <i className="fa fa-times wbdv-source-editor wbdv-close"
-                               onClick={() => this.props.changePage()}/>
+                            <Link className="fa fa-times wbdv-source-editor wbdv-close"
+                                  to={'/courses'}/>
                             <span className="wbdv-course-title">Knitting</span>
                         </h1>
                     </div>

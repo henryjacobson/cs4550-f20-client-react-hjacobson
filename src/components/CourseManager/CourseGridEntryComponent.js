@@ -1,5 +1,6 @@
 import React from "react";
 import {updateCourse} from "../../services/CourseService";
+import {Link} from 'react-router-dom';
 
 class CourseGridEntryComponent extends React.Component {
     state = {
@@ -42,8 +43,8 @@ class CourseGridEntryComponent extends React.Component {
                                 <div className={"col-2"}>
                                     <i className="fa fa-file text-center align-middle wbdv-icon"/>
                                 </div>
-                                <label className={"text-truncate col-10 align-middle"}
-                                onClick={() => this.props.changePage()}>{this.state.course.title}</label>
+                                <Link className={"text-truncate col-10 align-middle"}
+                                      to={`/editor/${this.state.course.id_}`}>{this.state.course.title}</Link>
                             </div>
                         }
                         <div className={"row wbdv-modified-date"}>

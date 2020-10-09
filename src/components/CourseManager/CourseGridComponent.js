@@ -17,8 +17,7 @@ class CourseGridComponent extends React.Component {
                         Owned by me
                     </div>
                     <div className={"col-3 wbdv-header"}>
-                        <i className="fa fa-list wbdv-button wbdv-list-layout"
-                           onClick={() => this.props.changeView()}/>
+                        <i className="fa fa-list wbdv-button wbdv-list-layout"/>
                     </div>
                 </div>
                 <div className={"row"}>

@@ -1,5 +1,6 @@
 import React from "react";
 import {updateCourse} from "../../services/CourseService";
+import {Link} from 'react-router-dom'
 
 class CourseTableEntryComponent extends React.Component {
   state = {
@@ -41,7 +42,7 @@ class CourseTableEntryComponent extends React.Component {
             <span>
               <i className="fa fa-file col-xs-6 wbdv-row wbdv-icon"/>
               &nbsp;
-              <label onClick={() => this.props.changePage()}>{this.state.course.title}</label>
+              <Link to={`/editor/${this.state.course.id_}`}>{this.state.course.title}</Link>
             </span>
           }
         </td>

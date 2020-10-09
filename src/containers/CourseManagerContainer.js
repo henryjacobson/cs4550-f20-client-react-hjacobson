@@ -111,8 +111,7 @@ class CourseManagerContainer extends React.Component {
                         <CourseGridComponent
                             courses={this.state.courses}
                             deleteCourse={this.deleteCourse}
-                            changeView={this.changeView}
-                            changePage={this.props.changePage}/>
+                            changeView={this.changeView}/>
                     }
                 </div>
             </div>
