@@ -20,14 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b3a6f4d-548d-4df4-8ea0-f4b048e41237" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/lessonActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/moduleActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/topicActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/ModuleList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/lessonReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/moduleReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/topicReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/courseReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/ModuleList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/ModuleList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/CourseEditorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/PageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/PageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/LessonService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/LessonService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/TopicService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/TopicService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,6 +87,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mrsco\Documents\WebDev\cs4550-f20-client-react-hjacobson\src\components\CourseEditor" />
+      <recent name="C:\Users\mrsco\Documents\WebDev\cs4550-f20-client-react-hjacobson\src\components\CourseEditorComponent" />
       <recent name="C:\Users\mrsco\Documents\WebDev\cs4550-f20-client-react-hjacobson\src\containers" />
       <recent name="C:\Users\mrsco\Documents\WebDev\cs4550-f20-client-react-hjacobson\src\css" />
       <recent name="C:\Users\mrsco\Documents\WebDev\cs4550-f20-client-react-hjacobson\src\components\CourseManager" />
@@ -120,7 +121,7 @@
       <workItem from="1602018484630" duration="17874000" />
       <workItem from="1602275851618" duration="3524000" />
       <workItem from="1602524965175" duration="621000" />
-      <workItem from="1603129311665" duration="10385000" />
+      <workItem from="1603129311665" duration="15551000" />
     </task>
     <servers />
   </component>

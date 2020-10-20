@@ -1,11 +1,11 @@
 import React from "react";
-import "../css/styles.css"
-import LessonComponent from "../components/CourseEditor/LessonComponent";
-import ModuleComponent from "../components/CourseEditor/ModuleComponent";
-import TopicComponent from "../components/CourseEditor/TopicComponent";
+import "../../css/styles.css"
+import LessonComponent from "./LessonComponent";
+import ModuleComponent from "./ModuleComponent";
+import TopicComponent from "./TopicComponent";
 import {Link} from 'react-router-dom';
 
-class CourseEditorContainer extends React.Component {
+class CourseEditorComponent extends React.Component {
     state = {
         modules: [
             "Module 1 - jQuery",
@@ -170,4 +170,4 @@ class CourseEditorContainer extends React.Component {
     }
 }
 
-export default CourseEditorContainer
+export default CourseEditorComponent

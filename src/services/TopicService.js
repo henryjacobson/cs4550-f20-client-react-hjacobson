@@ -1,7 +1,7 @@
 const url = "https://wbdv-generic-server.herokuapp.com/api/hjacobson"
 
-export const createTopic = (courseId, topic) =>
-    fetch(`${url}/courses/${courseId}/topics`, {
+export const createTopic = (lessonId, topic) =>
+    fetch(`${url}/lessons/${lessonId}/topics`, {
         method: 'POST',
         body: JSON.stringify(topic),
         headers: {
@@ -10,8 +10,8 @@ export const createTopic = (courseId, topic) =>
     })
         .then(response => response.json())
 
-export const findAllTopicsForCourse = (courseId) =>
-    fetch(`${url}/courses/${courseId}/topics`)
+export const findAllTopicsForLesson = (lessonId) =>
+    fetch(`${url}/lessons/${lessonId}/topics`)
         .then(response => response.json())
 
 export const updateTopic = (topicId, topic) =>
@@ -31,5 +31,5 @@ export const deleteTopic = (topicId) =>
         .then(response => response.json())
 
 export default {
-    createTopic, findAllTopicsForCourse, updateTopic, deleteTopic
+    createTopic, findAllTopicsForLesson, updateTopic, deleteTopic
 }

@@ -18,7 +18,7 @@ const ModuleList = (
         updateModule}) =>
     <div>
         <h1>{course.title}</h1>
-        <ul>
+        <ul className="list-group wbdv-module-list">
             {
                 modules.map(module =>
                     <li key={module._id}>

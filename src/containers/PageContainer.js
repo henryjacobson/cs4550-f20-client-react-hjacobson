@@ -1,6 +1,6 @@
 import React from 'react';
 import CourseManagerContainer from "./CourseManagerContainer";
-import CourseEditorContainer from "./CourseEditorContainer";
+import CourseEditorComponent from "../components/CourseEditor/CourseEditorComponent";
 
 class PageContainer extends React.Component {
     state={
@@ -23,7 +23,7 @@ class PageContainer extends React.Component {
                 }
                 {
                     !this.state.manager &&
-                        <CourseEditorContainer
+                        <CourseEditorComponent
                             changePage={this.changePage}/>
                 }
             </span>
