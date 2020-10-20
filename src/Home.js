@@ -6,7 +6,7 @@ class Home extends React.Component {
         return(
             <div>
                 <Link to={'/editor'}>Course Editor</Link>
-                <Link to={'/courses'}>Course Manager</Link>
+                <Link to={'/courses/table'}>Course Manager</Link>
             </div>
         )
     }

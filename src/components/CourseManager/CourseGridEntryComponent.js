@@ -44,7 +44,7 @@ class CourseGridEntryComponent extends React.Component {
                                     <i className="fa fa-file text-center align-middle wbdv-icon"/>
                                 </div>
                                 <Link className={"text-truncate col-10 align-middle"}
-                                      to={`/editor/${this.state.course.id_}`}>{this.state.course.title}</Link>
+                                      to={`/editor/:${this.state.course._id}`}>{this.state.course.title}</Link>
                             </div>
                         }
                         <div className={"row wbdv-modified-date"}>

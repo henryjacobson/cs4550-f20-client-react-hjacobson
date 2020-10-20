@@ -15,8 +15,15 @@ ReactDOM.render(
                 path={'/'}
                 component={Home}/>
             <Route
-                path={'/courses'}
-                component={CourseManagerContainer}/>
+                path={'/courses/table'}
+                render={(props) => (
+                    <CourseManagerContainer {...props} table={true}/>
+                )}/>
+            <Route
+                path={'/courses/grid'}
+                render={(props) => (
+                    <CourseManagerContainer {...props} table={false}/>
+                )}/>
             <Route
                 path={'/editor'}
                 component={CourseEditorContainer}/>

@@ -39,7 +39,7 @@ class CourseEditorContainer extends React.Component {
                     <div className="col-4">
                         <h1>
                             <Link className="fa fa-times wbdv-source-editor wbdv-close"
-                                  to={'/courses'}/>
+                                  to={'/courses/table'}/>
                             <span className="wbdv-course-title">Knitting</span>
                         </h1>
                     </div>

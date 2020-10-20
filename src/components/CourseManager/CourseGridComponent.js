@@ -1,5 +1,6 @@
 import React from "react";
 import CourseGridEntryComponent from "./CourseGridEntryComponent";
+import {Link} from 'react-router-dom'
 
 class CourseGridComponent extends React.Component {
     constructor(props) {
@@ -17,7 +18,8 @@ class CourseGridComponent extends React.Component {
                         Owned by me
                     </div>
                     <div className={"col-3 wbdv-header"}>
-                        <i className="fa fa-list wbdv-button wbdv-list-layout"/>
+                        <Link className="fa fa-list wbdv-button wbdv-list-layout"
+                              to={"/courses/table"}/>
                     </div>
                 </div>
                 <div className={"row"}>

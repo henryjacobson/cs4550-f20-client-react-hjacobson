@@ -10,13 +10,7 @@ import CourseGridComponent from "../components/CourseManager/CourseGridComponent
 class CourseManagerContainer extends React.Component {
     state = {
         courses: [],
-        table: true
-    }
-
-    changeView = () => {
-        this.setState((prevState) => {
-            return {table: !prevState.table}
-        })
+        table: this.props.table
     }
 
     componentDidMount() {
@@ -102,16 +96,13 @@ class CourseManagerContainer extends React.Component {
                         this.state.table &&
                         <CourseTableComponent
                             courses={this.state.courses}
-                            deleteCourse={this.deleteCourse}
-                            changeView={this.changeView}
-                            changePage={this.props.changePage}/>
+                            deleteCourse={this.deleteCourse}/>
                     }
                     {
                         !this.state.table &&
                         <CourseGridComponent
                             courses={this.state.courses}
-                            deleteCourse={this.deleteCourse}
-                            changeView={this.changeView}/>
+                            deleteCourse={this.deleteCourse}/>
                     }
                 </div>
             </div>

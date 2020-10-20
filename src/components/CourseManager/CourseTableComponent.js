@@ -1,5 +1,6 @@
 import React from "react";
 import CourseTableEntryComponent from "./CourseTableEntryComponent";
+import {Link} from 'react-router-dom'
 
 class CourseTableComponent extends React.Component {
     constructor(props) {
@@ -15,8 +16,8 @@ class CourseTableComponent extends React.Component {
                     <th className="wbdv-header wbdv-owner">Owner</th>
                     <th className="wbdv-header wbdv-last-modified">Last Modified</th>
                     <th className="wbdv-header wbdv-title">
-                        <i className="fa fa-th-large wbdv-button wbdv-grid-layout"
-                            onClick={() => this.props.changeView()}/>
+                        <Link className="fa fa-th-large wbdv-button wbdv-grid-layout"
+                              to={"/courses/grid"}/>
                     </th>
                 </tr>
                 </thead>
