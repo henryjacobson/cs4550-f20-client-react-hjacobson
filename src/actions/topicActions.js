@@ -1,20 +1,20 @@
 import topicService from "../services/TopicService"
 export const CREATE_TOPIC = "CREATE_TOPIC"
-export const FIND_TOPICS_FOR_COURSE = "FIND_TOPICS_FOR_COURSE"
+export const FIND_TOPICS_FOR_LESSON = "FIND_TOPICS_FOR_LESSON"
 export const UPDATE_TOPIC = "UPDATE_TOPIC"
 export const DELETE_TOPIC = "DELETE_TOPIC"
 
-export const createTopic = (dispatch, course, topic) =>
-    topicService.createTopic(course._id, topic)
+export const createTopic = (dispatch, lesson, topic) =>
+    topicService.createTopic(lesson._id, topic)
         .then(actualTopic => dispatch({
             type: CREATE_TOPIC,
             topic: actualTopic
         }))
 
-export const findTopicsForCourse = (dispatch, course) =>
-    topicService.findAllTopicsForCourse(course._id)
+export const findTopicsForLesson = (dispatch, lesson) =>
+    topicService.findAllTopicsForLesson(lesson._id)
         .then(actualTopics => dispatch({
-                type: FIND_TOPICS_FOR_COURSE,
+                type: FIND_TOPICS_FOR_LESSON,
                 topics: actualTopics
             })
         )

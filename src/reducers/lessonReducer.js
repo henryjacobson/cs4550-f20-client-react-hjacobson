@@ -1,5 +1,5 @@
 import {
-    FIND_LESSONS_FOR_COURSE,
+    FIND_LESSONS_FOR_MODULE,
     DELETE_LESSON,
     UPDATE_LESSON,
     CREATE_LESSON
@@ -11,7 +11,7 @@ const initialState = {
 
 const lessonReducer = (state=initialState, action) => {
     switch (action.type) {
-        case FIND_LESSONS_FOR_COURSE:
+        case FIND_LESSONS_FOR_MODULE:
             return {
                 lessons: action.lessons
             }

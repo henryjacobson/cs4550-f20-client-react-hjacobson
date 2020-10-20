@@ -1,9 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
 import {
-    DELETE_MODULE,
-    CREATE_MODULE,
-    UPDATE_MODULE,
     updateModule,
     createModule,
     deleteModule

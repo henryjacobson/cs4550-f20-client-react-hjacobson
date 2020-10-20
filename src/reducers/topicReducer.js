@@ -1,5 +1,5 @@
 import {
-    FIND_TOPICS_FOR_COURSE,
+    FIND_TOPICS_FOR_LESSON,
     DELETE_TOPIC,
     UPDATE_TOPIC,
     CREATE_TOPIC
@@ -11,7 +11,7 @@ const initialState = {
 
 const topicReducer = (state=initialState, action) => {
     switch (action.type) {
-        case FIND_TOPICS_FOR_COURSE:
+        case FIND_TOPICS_FOR_LESSON:
             return {
                 topics: action.topics
             }

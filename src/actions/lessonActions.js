@@ -1,20 +1,20 @@
 import lessonService from "../services/LessonService"
 export const CREATE_LESSON = "CREATE_LESSON"
-export const FIND_LESSONS_FOR_COURSE = "FIND_LESSONS_FOR_COURSE"
+export const FIND_LESSONS_FOR_MODULE = "FIND_LESSONS_FOR_MODULE"
 export const UPDATE_LESSON = "UPDATE_LESSON"
 export const DELETE_LESSON = "DELETE_LESSON"
 
-export const createLesson = (dispatch, course, lesson) =>
-    lessonService.createLesson(course._id, lesson)
+export const createLesson = (dispatch, module, lesson) =>
+    lessonService.createLesson(module._id, lesson)
         .then(actualLesson => dispatch({
             type: CREATE_LESSON,
             lesson: actualLesson
         }))
 
-export const findLessonsForCourse = (dispatch, course) =>
-    lessonService.findAllLessonsForCourse(course._id)
+export const findLessonsForModule = (dispatch, module) =>
+    lessonService.findAllLessonsForModule(module._id)
         .then(actualLessons => dispatch({
-                type: FIND_LESSONS_FOR_COURSE,
+                type: FIND_LESSONS_FOR_MODULE,
                 lessons: actualLessons
             })
         )

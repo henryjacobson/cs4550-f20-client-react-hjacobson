@@ -4,6 +4,11 @@ import LessonComponent from "./LessonComponent";
 import ModuleComponent from "./ModuleComponent";
 import TopicComponent from "./TopicComponent";
 import {Link} from 'react-router-dom';
+import {connect} from "react-redux";
+import {findModulesForCourse} from "../../actions/moduleActions";
+import {findLessonsForModule} from "../../actions/lessonActions";
+import {findTopicsForLesson} from "../../actions/topicActions";
+import {findCourseById} from "../../services/CourseService";
 
 class CourseEditorComponent extends React.Component {
     state = {
@@ -30,6 +35,33 @@ class CourseEditorComponent extends React.Component {
             "Topic 3",
             "Topic 4",
         ]
+    }
+
+    componentDidMount() {
+        const courseId = this.props.match.params.courseId
+        const moduleId = this.props.match.params.moduleId
+        const lessonId = this.props.match.params.lessonId
+        this.props.findCourseById(courseId)
+        this.props.findModulesForCourse(courseId)
+        if(moduleId) {
+            this.props.findLessonsForModule(moduleId)
+            if(lessonId) {
+                this.props.findTopicsForLesson(lessonId)
+            }
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const moduleId = this.props.match.params.moduleId
+        const previousModuleId = prevProps.match.params.moduleId
+        if(moduleId !== previousModuleId) {
+            this.props.findLessonsForModule(moduleId)
+        }
+        const lessonId = this.props.match.params.lessonId
+        const previousLessonId = prevProps.match.params.lessonId
+        if(lessonId !== previousLessonId) {
+            this.props.findTopicsForLesson(lessonId)
+        }
     }
 
     render() {
@@ -170,4 +202,20 @@ class CourseEditorComponent extends React.Component {
     }
 }
 
-export default CourseEditorComponent
+const stateToProperty = (state) => ({
+    course: state.courseReducer.course
+})
+const propertyToDispatchMapper = (dispatch) => ({
+    findModulesForCourse: courseId => findModulesForCourse(dispatch, courseId),
+    findLessonsForModule: moduleId => findLessonsForModule(dispatch, moduleId),
+    findTopicsForLesson: lessonId => findTopicsForLesson(dispatch, lessonId),
+    findCourseById: (courseId) => findCourseById(courseId)
+        .then(actualCourse => dispatch({
+            type: "FIND_COURSE_BY_ID",
+            course: actualCourse
+        }))
+})
+
+export default connect
+(stateToProperty, propertyToDispatchMapper)
+(CourseEditorComponent)
