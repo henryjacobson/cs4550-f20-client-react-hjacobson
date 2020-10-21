@@ -3,8 +3,7 @@ import {connect} from "react-redux";
 import {
     updateModule,
     createModule,
-    deleteModule,
-    selectModule
+    deleteModule
 } from "../../actions/moduleActions";
 import {Link} from "react-router-dom";
 

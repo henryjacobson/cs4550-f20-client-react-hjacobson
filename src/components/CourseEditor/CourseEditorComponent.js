@@ -1,15 +1,15 @@
 import React from "react";
 import "../../css/styles.css"
-import LessonComponent from "./LessonComponent";
-import ModuleComponent from "./ModuleComponent";
 import TopicComponent from "./TopicComponent";
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
 import {findModulesForCourse, selectModule} from "../../actions/moduleActions";
-import {findLessonsForModule} from "../../actions/lessonActions";
-import {findTopicsForLesson} from "../../actions/topicActions";
+import {findLessonsForModule, selectLesson} from "../../actions/lessonActions";
+import {findTopicsForLesson, selectTopic} from "../../actions/topicActions";
 import {findCourseById} from "../../services/CourseService";
 import ModuleList from "./ModuleList";
+import LessonList from "./LessonList";
+import TopicList from "./TopicList";
 
 class CourseEditorComponent extends React.Component {
     state = {
@@ -42,6 +42,7 @@ class CourseEditorComponent extends React.Component {
         const courseId = this.props.match.params.courseId
         const moduleId = this.props.match.params.moduleId
         const lessonId = this.props.match.params.lessonId
+        const topicId = this.props.match.params.topicId
         this.props.findCourseById(courseId)
         this.props.findModulesForCourse(courseId)
         if(moduleId) {
@@ -49,6 +50,10 @@ class CourseEditorComponent extends React.Component {
             this.props.findLessonsForModule(moduleId)
             if(lessonId) {
                 this.props.findTopicsForLesson(lessonId)
+                this.props.selectLesson(lessonId)
+                if(topicId) {
+                    this.props.selectTopic(topicId)
+                }
             }
         }
     }
@@ -58,6 +63,19 @@ class CourseEditorComponent extends React.Component {
         const previousModuleId = prevProps.match.params.moduleId
         if(moduleId !== previousModuleId) {
             this.props.selectModule(moduleId)
+            this.props.findLessonsForModule(moduleId)
+            this.props.findTopicsForLesson(moduleId)
+        }
+        const lessonId = this.props.match.params.lessonId
+        const previousLessonId = prevProps.match.params.lessonId
+        if(lessonId !== previousLessonId) {
+            this.props.selectLesson(lessonId)
+            this.props.findTopicsForLesson(lessonId)
+        }
+        const topicId = this.props.match.params.topicId
+        const previousTopicId = prevProps.match.params.topicId
+        if(topicId !== previousTopicId) {
+            this.props.selectTopic(topicId)
         }
     }
 
@@ -74,16 +92,7 @@ class CourseEditorComponent extends React.Component {
                     </div>
 
                     <div className="col-8">
-                        <ul className="nav nav-tabs wbdv-lesson-tabs">
-                            {
-                                this.state.lessons.map(lesson =>
-                                    <LessonComponent
-                                        lesson={lesson}
-                                        key={lesson}/>
-                                )
-                            }
-                        </ul>
-                        <i className="fa fa-plus col-xs-6 wbdv-lesson-add-btn"/>
+                        <LessonList/>
                     </div>
                 </div>
 
@@ -109,14 +118,7 @@ class CourseEditorComponent extends React.Component {
                     <div className="col-sm-8">
                         <div className="container">
                             <div className="row">
-                                <ul className="nav nav-pills wbdv-topic-pill-list">
-                                    {
-                                        this.state.topics.map(topic =>
-                                            <TopicComponent
-                                                topic={topic}
-                                                key={topic}/>)
-                                    }
-                                </ul>
+                                <TopicList/>
                             </div>
 
                             <br/>
@@ -207,7 +209,9 @@ const propertyToDispatchMapper = (dispatch) => ({
     findModulesForCourse: courseId => findModulesForCourse(dispatch, courseId),
     selectModule: (moduleId) => selectModule(dispatch, moduleId),
     findLessonsForModule: moduleId => findLessonsForModule(dispatch, moduleId),
+    selectLesson: lessonId => selectLesson(dispatch, lessonId),
     findTopicsForLesson: lessonId => findTopicsForLesson(dispatch, lessonId),
+    selectTopic: topicId => selectTopic(dispatch, topicId),
     findCourseById: (courseId) => findCourseById(courseId)
         .then(actualCourse => dispatch({
             type: "FIND_COURSE_BY_ID",

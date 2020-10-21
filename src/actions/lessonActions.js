@@ -3,9 +3,10 @@ export const CREATE_LESSON = "CREATE_LESSON"
 export const FIND_LESSONS_FOR_MODULE = "FIND_LESSONS_FOR_MODULE"
 export const UPDATE_LESSON = "UPDATE_LESSON"
 export const DELETE_LESSON = "DELETE_LESSON"
+export const SELECT_LESSON = "SELECT_LESSON"
 
-export const createLesson = (dispatch, module, lesson) =>
-    lessonService.createLesson(module._id, lesson)
+export const createLesson = (dispatch, moduleId, lesson) =>
+    lessonService.createLesson(moduleId, lesson)
         .then(actualLesson => dispatch({
             type: CREATE_LESSON,
             lesson: actualLesson
@@ -34,3 +35,9 @@ export const deleteLesson = (dispatch, lesson) =>
                 lesson
             })
         )
+
+export const selectLesson = (dispatch, lessonId) =>
+    dispatch({
+        type: SELECT_LESSON,
+        lessonId
+    })

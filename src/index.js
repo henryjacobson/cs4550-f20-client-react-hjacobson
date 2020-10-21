@@ -44,7 +44,8 @@ ReactDOM.render(
                     path={[
                         '/editor/:courseId',
                         '/editor/:courseId/modules/:moduleId',
-                        '/editor/:courseId/modules/:moduleId/lessons/:lessonId'
+                        '/editor/:courseId/modules/:moduleId/lessons/:lessonId',
+                        '/editor/:courseId/modules/:moduleId/lessons/:lessonId/topics/:topicId'
                     ]}
                     exact component={CourseEditorComponent}/>
             </div>

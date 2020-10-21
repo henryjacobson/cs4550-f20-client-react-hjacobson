@@ -3,9 +3,10 @@ export const CREATE_TOPIC = "CREATE_TOPIC"
 export const FIND_TOPICS_FOR_LESSON = "FIND_TOPICS_FOR_LESSON"
 export const UPDATE_TOPIC = "UPDATE_TOPIC"
 export const DELETE_TOPIC = "DELETE_TOPIC"
+export const SELECT_TOPIC = "SELECT_TOPIC"
 
-export const createTopic = (dispatch, lesson, topic) =>
-    topicService.createTopic(lesson._id, topic)
+export const createTopic = (dispatch, lessonId, topic) =>
+    topicService.createTopic(lessonId, topic)
         .then(actualTopic => dispatch({
             type: CREATE_TOPIC,
             topic: actualTopic
@@ -34,3 +35,9 @@ export const deleteTopic = (dispatch, topic) =>
                 topic
             })
         )
+
+export const selectTopic = (dispatch, topicId) =>
+    dispatch({
+        type: SELECT_TOPIC,
+        topicId
+    })
