@@ -11,8 +11,8 @@ export const createTopic = (dispatch, lesson, topic) =>
             topic: actualTopic
         }))
 
-export const findTopicsForLesson = (dispatch, lesson) =>
-    topicService.findAllTopicsForLesson(lesson._id)
+export const findTopicsForLesson = (dispatch, lessonId) =>
+    topicService.findAllTopicsForLesson(lessonId)
         .then(actualTopics => dispatch({
                 type: FIND_TOPICS_FOR_LESSON,
                 topics: actualTopics

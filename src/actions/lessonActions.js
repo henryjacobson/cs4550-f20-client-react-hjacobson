@@ -11,8 +11,8 @@ export const createLesson = (dispatch, module, lesson) =>
             lesson: actualLesson
         }))
 
-export const findLessonsForModule = (dispatch, module) =>
-    lessonService.findAllLessonsForModule(module._id)
+export const findLessonsForModule = (dispatch, moduleId) =>
+    lessonService.findAllLessonsForModule(moduleId)
         .then(actualLessons => dispatch({
                 type: FIND_LESSONS_FOR_MODULE,
                 lessons: actualLessons

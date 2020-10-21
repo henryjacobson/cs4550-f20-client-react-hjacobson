@@ -5,10 +5,11 @@ import ModuleComponent from "./ModuleComponent";
 import TopicComponent from "./TopicComponent";
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
-import {findModulesForCourse} from "../../actions/moduleActions";
+import {findModulesForCourse, selectModule} from "../../actions/moduleActions";
 import {findLessonsForModule} from "../../actions/lessonActions";
 import {findTopicsForLesson} from "../../actions/topicActions";
 import {findCourseById} from "../../services/CourseService";
+import ModuleList from "./ModuleList";
 
 class CourseEditorComponent extends React.Component {
     state = {
@@ -44,6 +45,7 @@ class CourseEditorComponent extends React.Component {
         this.props.findCourseById(courseId)
         this.props.findModulesForCourse(courseId)
         if(moduleId) {
+            this.props.selectModule(moduleId)
             this.props.findLessonsForModule(moduleId)
             if(lessonId) {
                 this.props.findTopicsForLesson(lessonId)
@@ -55,12 +57,7 @@ class CourseEditorComponent extends React.Component {
         const moduleId = this.props.match.params.moduleId
         const previousModuleId = prevProps.match.params.moduleId
         if(moduleId !== previousModuleId) {
-            this.props.findLessonsForModule(moduleId)
-        }
-        const lessonId = this.props.match.params.lessonId
-        const previousLessonId = prevProps.match.params.lessonId
-        if(lessonId !== previousLessonId) {
-            this.props.findTopicsForLesson(lessonId)
+            this.props.selectModule(moduleId)
         }
     }
 
@@ -95,15 +92,16 @@ class CourseEditorComponent extends React.Component {
                     <div className="col-sm-4">
                         <div className="container">
                             <div className="row">
-                                <ul className="list-group wbdv-module-list">
-                                    {
-                                        this.state.modules.map(module =>
-                                            <ModuleComponent
-                                                module={module}
-                                                key={module}/>
-                                        )
-                                    }
-                                </ul>
+                                <ModuleList/>
+                                {/*<ul className="list-group wbdv-module-list">*/}
+                                {/*    {*/}
+                                {/*        this.state.modules.map(module =>*/}
+                                {/*            <ModuleComponent*/}
+                                {/*                module={module}*/}
+                                {/*                key={module}/>*/}
+                                {/*        )*/}
+                                {/*    }*/}
+                                {/*</ul>*/}
                             </div>
                         </div>
 
@@ -207,6 +205,7 @@ const stateToProperty = (state) => ({
 })
 const propertyToDispatchMapper = (dispatch) => ({
     findModulesForCourse: courseId => findModulesForCourse(dispatch, courseId),
+    selectModule: (moduleId) => selectModule(dispatch, moduleId),
     findLessonsForModule: moduleId => findLessonsForModule(dispatch, moduleId),
     findTopicsForLesson: lessonId => findTopicsForLesson(dispatch, lessonId),
     findCourseById: (courseId) => findCourseById(courseId)

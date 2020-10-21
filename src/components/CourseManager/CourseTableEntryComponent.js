@@ -42,7 +42,7 @@ class CourseTableEntryComponent extends React.Component {
             <span>
               <i className="fa fa-file col-xs-6 wbdv-row wbdv-icon"/>
               &nbsp;
-              <Link to={`/editor/:${this.state.course._id}`}>{this.state.course.title}</Link>
+              <Link to={`/editor/${this.state.course._id}`}>{this.state.course.title}</Link>
             </span>
           }
         </td>

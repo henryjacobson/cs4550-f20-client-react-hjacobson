@@ -3,54 +3,57 @@ import {connect} from "react-redux";
 import {
     updateModule,
     createModule,
-    deleteModule
+    deleteModule,
+    selectModule
 } from "../../actions/moduleActions";
 import {Link} from "react-router-dom";
 
 const ModuleList = (
     { course,
         modules=[],
+        selectedModule,
         deleteModule,
         createModule,
         updateModule}) =>
     <div>
-        <h1>{course.title}</h1>
         <ul className="list-group wbdv-module-list">
             {
                 modules.map(module =>
-                    <li key={module._id}>
-                        <button
-                            onClick={() => deleteModule(module)}>
-                            Delete
-                        </button>
+                    <span key={module._id}>
                         {
                             module.editing &&
-                            <span>
-                <button onClick={() =>
-                    updateModule({...module, editing: false})
-                }>
-                  Ok
-                </button>
-                <input
-                    onChange={(event) =>
-                        updateModule({...module, title: event.target.value})
-                    }
-                    value={module.title}/>
-              </span>
+                            <li className="list-group-item active wbdv-module-item-title">
+                                <input
+                                    onChange={(event) =>
+                                        updateModule({...module, title: event.target.value})
+                                    }
+                                    value={module.title}/>
+
+                                <i className={"fa fa-check wbdv-button wbdv-ok"}
+                                    onClick={() => updateModule({...module, editing: false})}/>
+                                <i className="fa fa-times float-right wbdv-module-item-delete-btn"
+                                    onClick={() => deleteModule(module)}/>
+                            </li>
                         }
                         {
                             !module.editing &&
-                            <span>
-                <button onClick={
-                    () => updateModule({...module, editing: true})}>
-                  Edit
-                </button>
-                <Link to={`/edit/${course._id}/modules/${module._id}`}>
-                {module.title}
-                </Link>
-              </span>
+                            module._id === selectedModule &&
+                            <li className="list-group-item active wbdv-module-item-title">
+                                {module.title}
+                            </li>
                         }
-                    </li>)
+                        {
+                            !module.editing &&
+                            module._id !== selectedModule &&
+                            <li className="list-group-item wbdv-module-item-title">
+                                <Link to={`/editor/${course._id}/modules/${module._id}`}>
+                                    {module.title}
+                                </Link>
+                                <i className={"fa fa-gear float-right wbdv-button wbdv-edit"}
+                                   onClick={() => updateModule({...module, editing: true})}/>
+                            </li>
+                        }
+                    </span>)
             }
         </ul>
         <button onClick={() => createModule(course, {title: "New Module"})}>
@@ -62,6 +65,7 @@ const ModuleList = (
 
 const stateToPropertyMapper = (state) => ({
     modules: state.moduleReducer.modules,
+    selectedModule: state.moduleReducer.moduleId,
     course: state.courseReducer.course
 })
 

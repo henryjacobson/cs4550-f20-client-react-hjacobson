@@ -46,7 +46,7 @@ ReactDOM.render(
                         '/editor/:courseId/modules/:moduleId',
                         '/editor/:courseId/modules/:moduleId/lessons/:lessonId'
                     ]}
-                    component={CourseEditorComponent}/>
+                    exact component={CourseEditorComponent}/>
             </div>
         </Router>
     </Provider>
