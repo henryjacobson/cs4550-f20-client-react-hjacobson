@@ -6,10 +6,12 @@ import {connect} from "react-redux";
 import {findModulesForCourse, selectModule} from "../../actions/moduleActions";
 import {findLessonsForModule, selectLesson} from "../../actions/lessonActions";
 import {findTopicsForLesson, selectTopic} from "../../actions/topicActions";
+import {findWidgetsForTopic, togglePreview} from "../../actions/widgetActions";
 import {findCourseById} from "../../services/CourseService";
 import ModuleList from "./ModuleList";
 import LessonList from "./LessonList";
 import TopicList from "./TopicList";
+import WidgetList from "./WidgetList";
 
 class CourseEditorComponent extends React.Component {
     state = {
@@ -53,6 +55,7 @@ class CourseEditorComponent extends React.Component {
                 this.props.selectLesson(lessonId)
                 if(topicId) {
                     this.props.selectTopic(topicId)
+                    this.props.findWidgetsForTopic(topicId)
                 }
             }
         }
@@ -76,7 +79,12 @@ class CourseEditorComponent extends React.Component {
         const previousTopicId = prevProps.match.params.topicId
         if(topicId !== previousTopicId) {
             this.props.selectTopic(topicId)
+            this.props.findWidgetsForTopic(topicId)
         }
+    }
+
+    togglePreview(cb) {
+        this.props.togglePreview(cb.checked)
     }
 
     render() {
@@ -87,7 +95,7 @@ class CourseEditorComponent extends React.Component {
                         <h1>
                             <Link className="fa fa-times wbdv-source-editor wbdv-close"
                                   to={'/courses/table'}/>
-                            <span className="wbdv-course-title">Knitting</span>
+                            <div className="wbdv-course-title">Knitting</div>
                         </h1>
                     </div>
 
@@ -102,15 +110,6 @@ class CourseEditorComponent extends React.Component {
                         <div className="container">
                             <div className="row">
                                 <ModuleList/>
-                                {/*<ul className="list-group wbdv-module-list">*/}
-                                {/*    {*/}
-                                {/*        this.state.modules.map(module =>*/}
-                                {/*            <ModuleComponent*/}
-                                {/*                module={module}*/}
-                                {/*                key={module}/>*/}
-                                {/*        )*/}
-                                {/*    }*/}
-                                {/*</ul>*/}
                             </div>
                         </div>
 
@@ -123,72 +122,11 @@ class CourseEditorComponent extends React.Component {
 
                             <br/>
 
-                            <div className="row">
-                <span className="float-right">
-                <a className="btn btn-success" id="save">
-                    Save
-                </a>
-                <label htmlFor="preview">
-                    Preview
-                </label>
-                <input type="checkbox" id="preview" className="wbdv-preview"/>
 
-                </span>
-                            </div>
 
-                            <br/>
+                            <WidgetList/>
 
-                            <div className="row">
-                                <div className="border">
-                                    <div className="container">
-                                        <h3>
-                                            Heading Widget
-                                            <span className="float-right">
-                        <a className="btn btn-warning wbdv-nudge-3px-up">
-                            <i className="fa fa-arrow-up"/>
-                        </a>
-                        <a className="btn btn-warning wbdv-nudge-3px-up">
-                            <i className="fa fa-arrow-down"/>
-                        </a>
-                        <select>
-                            <option>Heading</option>
-                            <option>YouTube</option>
-                            <option>Image</option>
-                            <option>Document</option>
-                            <option>Slides</option>
-                        </select>
-                        <a className="btn btn-danger wbdv-nudge-3px-up">Delete</a>
-                            </span>
-                                        </h3>
 
-                                        <input className="form-control"/>
-                                        <select className="form-control">
-                                            <option>Heading 1</option>
-                                            <option>Heading 2</option>
-                                            <option>Heading 3</option>
-                                            <option>Heading 4</option>
-                                            <option>Heading 5</option>
-                                        </select>
-
-                                        <br/>
-
-                                        <input className="form-control"
-                                               title="Name your widget" placeholder="Widget Name"/>
-
-                                        <h3>
-                                            Preview
-                                        </h3>
-                                        <h1>
-                                            Heading text
-                                        </h1>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div className="row">
-                                <i className="fa fa-plus col-xs-6 float-right"/>
-                            </div>
                         </div>
 
 
@@ -212,6 +150,7 @@ const propertyToDispatchMapper = (dispatch) => ({
     selectLesson: lessonId => selectLesson(dispatch, lessonId),
     findTopicsForLesson: lessonId => findTopicsForLesson(dispatch, lessonId),
     selectTopic: topicId => selectTopic(dispatch, topicId),
+    findWidgetsForTopic: topicId => findWidgetsForTopic(dispatch, topicId),
     findCourseById: (courseId) => findCourseById(courseId)
         .then(actualCourse => dispatch({
             type: "FIND_COURSE_BY_ID",

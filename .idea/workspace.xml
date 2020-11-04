@@ -20,16 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b3a6f4d-548d-4df4-8ea0-f4b048e41237" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/TopicList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/widgetActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/WidgetList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/widgetReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/WidgetService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/lessonActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/lessonActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/topicActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/topicActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/LessonList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/LessonList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/ModuleList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/ModuleList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/lessonReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/lessonReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/topicReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/topicReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +120,10 @@
       <workItem from="1602018484630" duration="17874000" />
       <workItem from="1602275851618" duration="3524000" />
       <workItem from="1602524965175" duration="621000" />
-      <workItem from="1603129311665" duration="29215000" />
+      <workItem from="1603129311665" duration="29667000" />
+      <workItem from="1604175035703" duration="1500000" />
+      <workItem from="1604277079982" duration="2633000" />
+      <workItem from="1604375161136" duration="16070000" />
     </task>
     <servers />
   </component>
@@ -151,14 +151,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-3000.0.1500.980/0.0.1920.1040@0.0.1920.1040" timestamp="1602033511716" />
+    <state x="531" y="235" key="FileChooserDialogImpl" timestamp="1604371004665">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="531" y="235" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1604371004665" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1602026228690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/-3000.0.1500.980/0.0.1920.1040@0.0.1920.1040" timestamp="1602026228690" />
-    <state x="223" y="203" width="1547" height="717" key="dock-window-1" timestamp="1602032983092">
+    <state x="334" y="98" width="1495" height="1027" key="dock-window-1" timestamp="1604433516359">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="223" y="203" width="1547" height="717" key="dock-window-1/-3000.0.1500.980/0.0.1920.1040@0.0.1920.1040" timestamp="1602032983092" />
+    <state x="334" y="98" width="1495" height="1027" key="dock-window-1/-3000.0.1500.980/0.0.1920.1040@0.0.1920.1040" timestamp="1604433516359" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602028129102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
