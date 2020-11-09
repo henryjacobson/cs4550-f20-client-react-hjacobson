@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/api"
+const url = "https://rocky-sierra-12080.herokuapp.com/api" // "http://localhost:8080/api"
 
 export const createWidget = (topicId, widget) =>
     fetch(`${url}/widgets`, {
