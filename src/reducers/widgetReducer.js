@@ -43,7 +43,10 @@ const widgetReducer = (state=initialState, action) => {
             }
         case REORDER_WIDGET:
             return {
-                widgets: state.widgets.map(widget => widget.id === action.widget.id ? action.widget : widget),
+                widgets: state.widgets.map(
+                    widget => widget.id === action.widget.id ? action.widget :
+                        widget.id === action.otherWidget.id ? action.otherWidget : widget)
+                    .sort((w1, w2) => w1.widgetOrder - w2.widgetOrder),
                 preview: state.preview
             }
         default:

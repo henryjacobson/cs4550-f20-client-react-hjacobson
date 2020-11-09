@@ -87,17 +87,19 @@ const WidgetList = ({
                                                 value={widget.type}>
                                                 <option value={"header"}>Header</option>
                                                 <option value={"paragraph"}>Paragraph</option>
+                                                <option value={"list"}>List</option>
+                                                <option value={"image"}>Image</option>
                                             </select>
                                             <a className="btn btn-danger wbdv-nudge-3px-up"
                                             onClick={() => deleteWidget(widget)}>Delete</a>
                                         </div>
                                     </h3>
 
-                                    <input className="wbdv-widget-text"
+                                    <textarea className="wbdv-widget-text"
                                            onChange={event =>
                                                updateWidget({...widget, text: event.target.value})
                                            }
-                                           value={widget.widgetOrder}//{widget.text}
+                                           value={widget.text}
                                            placeholder={"Widget Text"}/>
 
                                     {
@@ -116,6 +118,18 @@ const WidgetList = ({
                                         </select>
                                     }
 
+                                    {
+                                        widget.type === "list" &&
+                                        <select className="form-control"
+                                                onChange={event =>
+                                                    updateWidget({...widget, style: event.target.value})
+                                                }
+                                                value={widget.style}>
+                                            <option value={"unordered"}>Unordered</option>
+                                            <option value={"ordered"}>Ordered</option>
+                                        </select>
+                                    }
+
 
                                     <br/>
 
@@ -125,6 +139,8 @@ const WidgetList = ({
                                            }
                                            value={widget.name}
                                            placeholder="Widget Name"/>
+
+                                    {widget.widgetOrder}
                                 </div>
 
                             </div>
@@ -171,7 +187,34 @@ const WidgetList = ({
                                         <p>{widget.text}</p>
                                     </div>
                                 }
-
+                                {
+                                    widget.type === "list" &&
+                                    widget.style === "unordered" &&
+                                    <ul>
+                                        {
+                                            widget.text.split('\n').map(str =>
+                                                <li id={str}>
+                                                    {str}
+                                                </li>)
+                                        }
+                                    </ul>
+                                }
+                                {
+                                    widget.type === "list" &&
+                                    widget.style === "ordered" &&
+                                    <ol>
+                                        {
+                                            widget.text.split('\n').map(str =>
+                                                <li id={str}>
+                                                    {str}
+                                                </li>)
+                                        }
+                                    </ol>
+                                }
+                                {
+                                    widget.type === "image" &&
+                                    <img src={widget.text} alt={"Widget Image"}/>
+                                }
                             </div>
                         </li>
                     )
@@ -184,7 +227,9 @@ const WidgetList = ({
                 onClick={() => createWidget(topic,
                     {
                         type: "header",
-                        size: 1
+                        size: 1,
+                        widgetOrder: widgets.length,
+                        style: "unordered"
                     }
                     )}/>
         </div>

@@ -1,9 +1,9 @@
 const url = "http://localhost:8080/api"
 
 export const createWidget = (topicId, widget) =>
-    fetch(`${url}/topics/${topicId}/widgets`, {
+    fetch(`${url}/widgets`, {
         method: 'POST',
-        body: JSON.stringify(widget),
+        body: JSON.stringify({...widget, topicId}),
         headers: {
             'content-type': 'application/json'
         }
@@ -28,7 +28,7 @@ export const deleteWidget = (widgetId) =>
     fetch(`${url}/widgets/${widgetId}`, {
         method: 'DELETE'
     })
-        .then(response => response.json())
+        .then(response => response)
 
 export const reorderWidget = (tid, order, widget) =>
     fetch(`${url}/topics/${tid}/${order}`, {

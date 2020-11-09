@@ -45,9 +45,10 @@ export const togglePreview = (dispatch, preview) =>
 
 export const reorderWidget = (dispatch, tid, order, widget) =>
     widgetService.reorderWidget(tid, order, widget)
-        .then(status => dispatch({
+        .then(otherWidget => dispatch({
             type: REORDER_WIDGET,
-            widget
+            widget,
+            otherWidget
         }))
 
 export const saveAll = (dispatch, widgets) =>
